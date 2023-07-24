@@ -19,6 +19,7 @@ class Activity():
             is_present = False
             actual = 'VPC name is not '+ expected_result
             compute_client = compute_v1.NetworksClient(credentials=credentials)
+            logging.info("")
             try:
                 vpcs = compute_client.list(project=project_id)
                 for vpc in vpcs:
@@ -27,9 +28,11 @@ class Activity():
                         actual=expected_result
                         break
                     else:
+                        logging.info("")
                         actual= vpc.name      
 
             except Exception as e:
+                logging.info("exception:",str(e))
                 is_present = False
 
             test_object.update_pre_result(testcase_description,expected_result)
