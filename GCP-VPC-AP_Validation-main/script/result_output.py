@@ -74,6 +74,11 @@ class ResultOutput:
             "comments": "",
             "ref": ""
             }
+        
+        if self.index >= len(self.method_list):
+            logging.error("All testcase methods have been processed.")
+            return
+            
         self.index+=1
         self.testcase_method=self.method_list[self.index]
         self.template["index"]=self.index
