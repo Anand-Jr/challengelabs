@@ -28,7 +28,7 @@ class Activity():
                         actual=expected_result
                         break
                     else:
-                        logging.info("")
+                        logging.info(actual)
                         actual= vpc.name      
 
             except Exception as e:
