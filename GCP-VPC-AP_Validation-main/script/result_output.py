@@ -46,11 +46,14 @@ class ResultOutput:
         #logging.info("step 11")
 
     def update_pre_result(self,description="",expected=""):
+
+         print("index:",self.index)  
          
         if not self.method_list:
             logging.error("No testcase methods found in the class_object.")
             return
 
+        print("index:",self.index)  
         self.template={"index":0,
             "testCase": "",
             "expected": "",
@@ -59,7 +62,8 @@ class ResultOutput:
             "comments": "",
             "ref": ""
             }
-        
+
+        print("index:",self.index)  
         if self.index >= len(self.method_list):
             logging.error("All testcase methods have been processed.")
             return
