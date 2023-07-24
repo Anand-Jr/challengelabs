@@ -83,7 +83,7 @@ class ResultOutput:
         self.template["status"]=0
         self.template["comments"]="{{"+str(self.method_list[self.index])+"_comments"+"}}"
         self.template["ref"]="{{"+str(self.method_list[self.index])+"_ref"+"}}"
-        self.testcases.append(template)
+        self.testcases.append(self.template)
         self.testcases[self.index]["testCase"]=description
         self.testcases[self.index]["expected"]=expected
         self.summary["totalTests"]+=1
