@@ -37,21 +37,6 @@ class ResultOutput:
                 self.output["context"]["args"]=json.loads(args)
         except Exception as e:
             logging.info(str(e))   
-     
-        
-        #try: 
-        #    if "token" in json.loads(args).keys():
-        #    #logging.info("step 5")
-        #        print(json.loads(args).keys())
-        #        self.output["context"]["token"]=json.loads(args)['token']
-        #        #logging.info("step 6")
-        #    else:
-        #    #logging.info("step 7")
-        #        self.output["context"]["args"]=json.loads(args)
-        #        #logging.info("step 8")
-        #except Exception as e:
-        #    logging.info(str(e))
-        #    logging.info("Malformed json input argumnets") 
 
         
         print("hetting method list")
@@ -78,7 +63,7 @@ class ResultOutput:
         if self.index >= len(self.method_list):
             logging.error("All testcase methods have been processed.")
             return
-            
+        print("index:",self.index)    
         self.index+=1
         self.testcase_method=self.method_list[self.index]
         self.template["index"]=self.index
