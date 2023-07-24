@@ -19,7 +19,7 @@ class Activity():
             is_present = False
             actual = 'VPC name is not '+ expected_result
             compute_client = compute_v1.NetworksClient(credentials=credentials)
-            logging.info("")
+            logging.info(f"{testcase_description} started")
             try:
                 vpcs = compute_client.list(project=project_id)
                 for vpc in vpcs:
