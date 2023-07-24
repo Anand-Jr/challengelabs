@@ -32,6 +32,7 @@ class ResultOutput:
             if "token" in json.loads(args).keys():
                 print(json.loads(args).keys())
                 self.output["context"]["token"]=json.loads(args)['token']
+                print(self.output)
             else:
                 self.output["context"]["args"]=json.loads(args)
         except Exception as e:
