@@ -47,7 +47,7 @@ class ResultOutput:
 
     def update_pre_result(self,description="",expected=""):
 
-         print("index:",self.index)  
+        print("index:",self.index)  
          
         if not self.method_list:
             logging.error("No testcase methods found in the class_object.")
