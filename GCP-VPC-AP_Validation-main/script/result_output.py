@@ -61,6 +61,10 @@ class ResultOutput:
         #logging.info("step 11")
 
     def update_pre_result(self,description="",expected=""):
+         
+        if not self.method_list:
+            logging.error("No testcase methods found in the class_object.")
+            return
 
         self.template={"index":0,
             "testCase": "",
@@ -72,13 +76,13 @@ class ResultOutput:
             }
         self.index+=1
         self.testcase_method=self.method_list[self.index]
-        template["index"]=self.index
-        template["testCase"]="{{"+str(self.method_list[self.index])+"_description"+"}}"
-        template["expected"]="{{"+str(self.method_list[self.index])+"_expected"+"}}"
-        template["actual"]="{{"+str(self.method_list[self.index])+"_actual"+"}}"
-        template["status"]=0
-        template["comments"]="{{"+str(self.method_list[self.index])+"_comments"+"}}"
-        template["ref"]="{{"+str(self.method_list[self.index])+"_ref"+"}}"
+        self.template["index"]=self.index
+        self.template["testCase"]="{{"+str(self.method_list[self.index])+"_description"+"}}"
+        self.template["expected"]="{{"+str(self.method_list[self.index])+"_expected"+"}}"
+        self.template["actual"]="{{"+str(self.method_list[self.index])+"_actual"+"}}"
+        self.template["status"]=0
+        self.template["comments"]="{{"+str(self.method_list[self.index])+"_comments"+"}}"
+        self.template["ref"]="{{"+str(self.method_list[self.index])+"_ref"+"}}"
         self.testcases.append(template)
         self.testcases[self.index]["testCase"]=description
         self.testcases[self.index]["expected"]=expected
