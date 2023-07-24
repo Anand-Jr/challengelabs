@@ -27,6 +27,7 @@ class ResultOutput:
             self.output=json.load(result_resource)
             logging.info("loaded contents of resultTemplate.json")
             result_resource.close()
+            print(self.output)
             logging.info("closed file resultTemplate.json")
             if "token" in json.loads(args).keys():
                 print(json.loads(args).keys())
