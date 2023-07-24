@@ -52,8 +52,10 @@ class ResultOutput:
         #    logging.info(str(e))
         #    logging.info("Malformed json input argumnets") 
 
+        
+        print("hetting method list")
         self.method_list = [attribute for attribute in dir(class_object) if callable(getattr(class_object, attribute)) and attribute.startswith('testcase') is True]
-
+        print(f"hetting method list {self.method_list}")    
         #self.testcases=testcase_list
         #logging.info("step 11")
 
